@@ -1,56 +1,59 @@
-Fördjupningsuppgift: Polars i Python
-
-Fördjupningsuppgift i Avancerad Python, kursen Data Scientist, EC Utbildning.
-Ämnet är biblioteket Polars för Python — grunderna i att läsa, filtrera, sortera och sammanställa 
-data, lazy evaluation, samt en jämförelse mot Pandas i både syntax och prestanda.
+Polars-fördjupning
 
 
-Innehåll och besrkivning av filerna i mappen
+Om Projektet
+Det här är min fördjupningsuppgift i kursen Avancerad Python för Data Scientist på EC Utbildning.
+Jag har tittat närmare på Polars, som är ett DataFrame-bibliotek för Python. Jag har framför allt testat hur man arbetar med data i Polars och jämfört det med Pandas i både syntax och prestanda.
 
-polars_fordjupning.ipynb Jupyter-notebook med all kod, körd och förklarad steg för steg
-Polars_rapport.pdf	Den skriftliga rapporten (valt område, fokus, praktisk del, relevans, avgränsning, slutsats, källor)
-Polars_presentation.pptx Presentation för muntlig redovisning av uppgiften
-elforbrukning.csv Exempeldatan som notebooken använder
-README.md Den här filen
-Vad uppgiften går igenom
-Läsa in data med pl.read_csv() och utforska den (schema, saknade värden, statistik)
-Filtrera rader utifrån villkor
-Sortera data på en och flera kolumner
-Beräkningar av nya kolumner, inklusive villkorsbaserade beräkningar med pl.when().then()
-Gruppering och aggregering (group_by / agg) på en eller flera kolumner
-Lazy evaluation med pl.scan_csv() och .collect(), samt hur man kan läsa den optimerade planen med .explain()
-En direkt jämförelse mellan Polars och Pandas, både i syntax och i hastighet, med en egen benchmark på en miljon rader
-Om datan
+Vad projektet gör:
+Projektet består av en Jupyter-notebook, polars_fordjupning. ipynb, där jag:
+•	läser in en CSV-fil med elförbrukningsdata
+•	filtrerar och sorterar data
+•	räknar ut nya kolumner
+•	grupperar och summerar data per region, sektor och månad
+•	testar lazy evaluation med scan_csv()
+•	jämför Polars mot Pandas på en testfil med en miljon rader
+Datan är syntetisk och föreställer daglig elförbrukning för fem svenska städer under 2025. Datan är uppdelad på hushåll, industri och kommersiell verksamhet.
 
-elforbrukning.csv är inte hämtad från någon extern källa — det är en egen påhittad (syntetisk) datamängd som skapades för att ha något konkret att öva på. Den innehåller daglig elförbrukning för fem svenska städer (Stockholm, Göteborg, Malmö, Uppsala, Umeå) under 2025, uppdelat på sektorerna hushåll, industri och kommersiell verksamhet, med en inbyggd säsongsvariation (högre förbrukning vintertid) och ett antal medvetet saknade temperaturvärden att öva filtrering på.
+Installation
+Öppna terminalen och kör:
+pip install polars pandas numpy jupyter
+Så kör du projektet
+1. Klona repot eller ladda ner projektmappen.
+2. Öppna terminalen i projektmappen.
+3. Starta Jupyter:
+jupyter notebook
+4. Öppna filen polars_fordjupning.ipynb.
+5. Kör notebookens celler uppifrån och ner.
+Notebooken skapar och tar bort en temporär testfil, stor_testfil.csv, under prestandatestet.
 
-Riktig svensk elstatistik finns öppet hos bland annat:
 
-SCB:s statistikdatabas - elanvändning i Sverige
-Energimyndigheten - statistikansvarig myndighet för elstatistik
+Bibliotek
+•	polars
+•	pandas
+•	numpy
+•	jupyter
+Versionerna som användes när notebooken kördes:
+•	Polars 1.44.2
+•	Pandas 3.0.2
+•	Python 3.12.10
 
-Kolumner i elforbrukning.csv:
+Data
+Filen elforbrukning.csv ligger i projektet.
+Datan är syntetisk och skapad för uppgiften. Den innehåller säsongsvariation och några medvetet saknade värden i temperaturkolumnen.
 
-Kolumn	Beskrivning
-datum	Datum (2025-01-01 till 2025-12-31)
-region	Stad: Stockholm, Göteborg, Malmö, Uppsala eller Umeå
-sektor	Hushåll, Industri eller Kommersiell
-forbrukning_kwh	Förbrukning i kWh den dagen
-pris_sek_per_kwh	Elpris i kr/kWh
-temperatur_c	Medeltemperatur den dagen i °C (vissa värden saknas)
-
-Benchmark-delen i notebooken skapar dessutom en egen, tillfällig testfil med en miljon slumpade rader (stor_testfil.csv) för att jämföra prestanda mellan Polars och Pandas. Den filen tas bort igen automatiskt av notebooken efter att testet är klart, så den finns inte kvar i mappen.
-
-Hur man kör notebooken
-
-Behöver Python 3 samt bibliotekena polars, pandas och numpy:
-
-bash
-pip install polars pandas numpy
-
-Öppna sedan polars_fordjupning.ipynb i Jupyter (eller VS Code / valfri notebook-miljö) och kör cellerna i ordning. Notebooken förväntar sig att elforbrukning.csv ligger i samma mapp, vilket den gör här direkt. Benchmark-delen mot en miljon rader kan ta någon sekund extra att köra beroende på datorns prestanda.
+Kolumner
+datum – datum under 2025
+region – Stockholm, Göteborg, Malmö, Uppsala eller Umeå
+sektor – Hushåll, Industri eller Kommersiell
+forbrukning_kwh – förbrukning i kWh
+pris_sek_per_kwh – elpris i kr/kWh
+temperatur_c – medeltemperatur i grader Celsius
 
 Källor
-Polars officiella dokumentation: https://docs.pola.rs/
-Polars på GitHub: https://github.com/pola-rs/polars
-Pandas officiella dokumentation: https://pandas.pydata.org/docs/
+Polars dokumentation:
+https://docs.pola.rs/
+Polars GitHub:
+https://github.com/pola-rs/polars
+Pandas dokumentation:
+https://pandas.pydata.org/docs/
