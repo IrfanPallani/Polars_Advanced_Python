@@ -1,12 +1,13 @@
 # Fördjupningsuppgift: Polars i Python
 
-Fördjupningsuppgift i kursen Data Science med AI-fokus, EC Utbildning.
-Ämnet är biblioteket **Polars** för Python, med grunderna i att läsa, filtrera, sortera och
-sammanställa data, samt en kort jämförelse med Pandas.
+Fördjupningsuppgift i kursen Avancerad Python för Data Scientist, EC Utbildning.
+Ämnet handlar om **Polars** som är ett bibliotek för dataanalys i Python, liknande Pandas men med 
+fokus på prestanda och effektivitet. Polars är byggt på Rust och erbjuder snabbare databehandling, 
+särskilt för stora dataset. Med Polars kan man läsa in data, filtrera, sortera och sammanställa 
+data på ett effektivt sätt.  
 
-Författare: ipj
 
-## Innehåll i mappen
+## Innehållet i mappen finns följande filer:
 
 | Fil | Beskrivning |
 |---|---|
@@ -25,17 +26,17 @@ Författare: ipj
 - Gruppera och summera med `.group_by()` / `.agg()`
 - En enkel jämförelse med Pandas, både i hur koden skrivs och hur lång tid den tar att köra
 
+
 ## Om datan
 
-`elforbrukning.csv` är **inte hämtad från någon extern källa** — det är en egen påhittad (syntetisk)
+`elfrobruknin.csv` är **inte** hämtad från någon extern källa - det är en egen påhittad (syntetisk)
 datamängd som skapades för att ha något konkret att öva på. Den innehåller daglig elförbrukning för
 fem svenska städer (Stockholm, Göteborg, Malmö, Uppsala, Umeå) under 2025, uppdelat på sektorerna
-hushåll, industri och kommersiell verksamhet, med en inbyggd säsongsvariation och ett antal
+hushåll, industri och kommersiell verksamhet, med en inbyggd säsongsvariation och ett antal 
 medvetet saknade temperaturvärden att öva filtrering på.
-
 Riktig svensk elstatistik finns öppet hos bland annat:
-- [SCB:s statistikdatabas](https://www.statistikdatabasen.scb.se/) – elanvändning i Sverige
-- [Energimyndigheten](https://www.energimyndigheten.se/) – statistikansvarig myndighet för elstatistik
+- [SCB:s statistikdatabas](https://www.statistikdatabasen.scb.se/) - elanvändning i Sverige
+- [Energimyndigheten](https://www.energimyndigheten.se/) - statistikansvarig myndighet för elstatistik
 
 Kolumner i `elforbrukning.csv`:
 
@@ -56,9 +57,10 @@ Behöver Python 3 samt bibliotekena `polars` och `pandas`:
 pip install polars pandas
 ```
 
-Öppna sedan `polars_fordjupning_enkel.ipynb` i Jupyter (eller VS Code / valfri notebook-miljö) och
-kör cellerna i ordning. Notebooken förväntar sig att `elforbrukning.csv` ligger i samma mapp, vilket
-den gör här direkt.
+ÖPppna sedan `polars_fordjupning_enkel.ipynb` i Jupyter (eller VS Code / valfri notebook-miljö) 
+och kör cellerna i ordning. Notebooken förväntar sig att `elforbrukning.csv` ligger i samma mapp, 
+vilket den gör här direkt.
+
 
 ## Källor
 
