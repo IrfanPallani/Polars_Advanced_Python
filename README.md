@@ -29,7 +29,7 @@ data på ett effektivt sätt.
 
 ## Om datan
 
-`elfrobruknin.csv` är **inte** hämtad från någon extern källa - det är en egen påhittad (syntetisk)
+`elfrobruknin.csv` är inte hämtad från någon extern källa - det är en egen påhittad (syntetisk)
 datamängd som skapades för att ha något konkret att öva på. Den innehåller daglig elförbrukning för
 fem svenska städer (Stockholm, Göteborg, Malmö, Uppsala, Umeå) under 2025, uppdelat på sektorerna
 hushåll, industri och kommersiell verksamhet, med en inbyggd säsongsvariation och ett antal 
