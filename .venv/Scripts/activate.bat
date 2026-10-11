@@ -8,7 +8,11 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
+<<<<<<< HEAD
 set "VIRTUAL_ENV=C:\Users\zanya\Desktop\Polars_Muntligtpresentation_clone_github\Polars_Nyy_Skrivett\.venv"
+=======
+set "VIRTUAL_ENV=C:\Users\zanya\Desktop\Advanced Py\polars_fördjupning_uppgift\.venv"
+>>>>>>> 29493bd949638c515c8808317dd83794341665be
 
 if not defined PROMPT set PROMPT=$P$G
 
